@@ -1,0 +1,25 @@
+<section
+      className={`container-hero ${left ? 'hover-left' : ''} ${right ? 'hover-right' : ''}`}
+      >
+
+        <div
+          onMouseEnter={handleMouseEnterLeft}
+          onMouseLeave={handleMouseEnterLeft}
+          className={`split left-hero`}
+        >
+          {/* <h2>Hi, I'm Lordparcerito</h2> */}
+          {/* <Link
+            to='/about'
+          >Yo y tu</Link> */}
+        </div>
+
+        <div
+          onMouseEnter={handleMouseEnterRight}
+          onMouseLeave={handleMouseEnterRight}
+          className='split right-hero'>
+          {/* <h2>Hi, I'm Lordparcerito</h2> */}
+          {/* <Link
+            to='/about'
+          >Hello amix</Link> */}
+        </div>
+      </section>
