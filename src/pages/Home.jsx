@@ -1,5 +1,5 @@
 // LIBS
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 // COMPONENTS
@@ -26,18 +26,22 @@ import logoSolid from '../assets/images/solid.png'
 import vueProject from '../assets/images/formvue.png'
 import criptosReact from '../assets/images/criptosReact.png'
 import budgetProject from '../assets/images/budgets.jpg'
+import NextProject from '../assets/images/nextProject.jpg'
 
 // STYLES
 import '../styles/type.css'
 
-const tecnologies = [ "Vue", "Tailwind", "CSS"]
-const tecnologies2 = [ "React", "Tailwind"]
-const tecnologies3 = [ "React", "CSS", "Swiper"]
+const tecnologies = [ "VueJS", "Tailwind", "CSS"]
+const tecnologies2 = [ "ReactJS", "Tailwind"]
+const tecnologies3 = [ "ReactJS", "CSS", "Swiper"]
+const tecnologies4 = [ "NextJS", "CSS", "Tailwind", "Prisma", "Postgres"]
 
 const Home = () => {
 	const refKnowledge = useRef(null)
 	const refWorks = useRef(null)
 	const refProjects = useRef(null)
+  const [cursorX, setCursorX] = useState()
+  const [cursorY, setCursorY] = useState()
 
 	const style = {
 		'--num': 34,
@@ -56,8 +60,22 @@ const Home = () => {
 		refKnowledge.current.scrollIntoView({ behavior: 'smooth' })
 	}
 
+  window.addEventListener('mousemove', (e) => {
+    setCursorX(e.clientX)
+    setCursorY(e.clientY)
+  })
+
 	return (
-		<>
+		<div>
+
+      <div className='cursor'
+      style={
+        {
+          left: cursorX + 'px',
+          top: cursorY + 'px'
+        }
+      }
+      ></div>
 			<header>
 				<Nav
 					handlerKnowledge={handleClickKnowledge}
@@ -165,6 +183,7 @@ const Home = () => {
 						}
 						img={vueProject}
             tecnologies={tecnologies}
+            link={'https://formvuejsanath.netlify.app/'}
 					/>
 					<CardProjects
 						title={'Proyecto de Criptomonedas'}
@@ -173,6 +192,7 @@ const Home = () => {
 						}
 						img={criptosReact}
             tecnologies={tecnologies2}
+            link={'https://cripstosantah.netlify.app/'}
 					/>
 					<CardProjects
 						title={'Proyecto Presupuesto'}
@@ -181,13 +201,16 @@ const Home = () => {
 						}
 						img={budgetProject}
             tecnologies={tecnologies3}
+            link={'https://budgetantah.netlify.app/'}
 					/>
 					<CardProjects
-						title={'Proyecto 1'}
+						title={'Proyecto Next js'}
 						description={
-							'Lorem ipsum dolor sit amet'
+							'Este es un CRUD realizado con Next js 14, donde se puede ver el uso de la libreria de tailwind css, el uso de la libreria de prisma para la conexion con la base de datos y asi crear tareas como un TodoList, la base de datos utilizada es posgresql.'
 						}
-						img={vueProject}
+						img={NextProject}
+            tecnologies={tecnologies4}
+            link={'https://prisma-crud-project-alz2kcof0-camilo-ardilas-projects.vercel.app/'}
 					/>
 				</div>
 			</section>
@@ -201,7 +224,7 @@ const Home = () => {
 				</h2>
 				<Knowledge />
 			</section> */}
-		</>
+		</div>
 	)
 }
 

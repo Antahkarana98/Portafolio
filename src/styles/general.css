@@ -32,5 +32,14 @@ body {
 }
 
 .height-card {
-  height: 700px;
+  height: 700 px;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9999;
 }

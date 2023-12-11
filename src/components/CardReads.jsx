@@ -2,7 +2,7 @@ const CardReads = ({ CompanyAndDate, position, tasks,  img }) => {
 
   return (
     <>
-    <article className="flex w-2/4 text-slate-500 hover-card-reads p-8 rounded-xl text-xl">
+    <article className="flex w-2/4 text-slate-500 hover-card-reads p-8 rounded-xl text-xl cursor-pointer">
       <div className="w-1/2 grid grid-cols-3 gap-3 items-center">
         {img && img.map((item, index) => (
           <div key={index} className="rounded-xl">

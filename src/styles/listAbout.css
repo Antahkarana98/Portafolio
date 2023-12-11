@@ -6,7 +6,7 @@
 .list-about li {
   position: relative;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
 }
 .list-about li span {
   display: inline-block;
